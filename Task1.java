@@ -26,15 +26,8 @@ public class Task1 {
         Task7(45, 78);
     }
 
-    /*  метод для получения рандомного выражения с в диапазоне от 0 до maxValue (невключительно)*/
-    public static int TakeRandom(int maxValue) {
-        return (int) (Math.random() * maxValue);
-    }
     /*  задание 1 */
     public static void Task1 (int a, int b, int c){
-//        int a = TakeRandom(10);
-//        int b = TakeRandom(20);
-//        int c = TakeRandom(10);
         String Mess = ((a == b) && (b == c)) ? "равны" : "неравны";
         System.out.println("Числа a = " + a + ", b = " + b + ", c = " + c + " " + Mess + ".");
     }
@@ -125,7 +118,7 @@ public class Task1 {
         for (int i = 6; i >= 0; i--){
             ArrOfNumbers[i] = Number % 10;
             if (Number < 1) {
-                System.out.println("Введенное число " + SavedNumber + " некорректно, дальнейшая работа невозможна.");
+                System.out.println("Введенное число " + SavedNumber + " некорректно, преобразование осуществлено не будет.");
                 return;
             }
             Number /= 10;
