@@ -26,6 +26,8 @@ public class Task2 {
         Task2_2_4(3);
         Task2_2_5(66,55);
 
+        Task2_2_7(1223334444909L);
+
     }
 
     // Is the number natural?
@@ -178,4 +180,57 @@ public class Task2 {
         System.out.println("НОД(" + SavedA + ", " + SavedB + ") = " + b);
         System.out.println("2.2.6. НОK(" + SavedA + ", " + SavedB + ") = " + b * (SavedA / b) * (SavedB / b));
     }
-}
+
+    public static void PrintNum(int Ind, int Num){
+        if (Num > 0)
+            System.out.println( " numeral " + Ind + ": " + Num + " times");
+    }
+    // 2_2.5_7. Find НОК and НОД as russians say
+    public static void Task2_2_7(long Number) {
+        System.out.print("2.2.7. ");
+        if (!IsNatural(Number))
+            return;
+
+        int a0 = 0;
+        int a1 = 0;
+        int a2 = 0;
+        int a3 = 0;
+        int a4 = 0;
+        int a5 = 0;
+        int a6 = 0;
+        int a7 = 0;
+        int a8 = 0;
+        int a9 = 0;
+        int Numeral = 0;
+        long SavedNumber = Number;
+
+        do {
+            Numeral = (int) (Number % 10);
+            switch (Numeral){
+                case 0: a0++; break;
+                case 1: a1++; break;
+                case 2: a2++; break;
+                case 3: a3++; break;
+                case 4: a4++; break;
+                case 5: a5++; break;
+                case 6: a6++; break;
+                case 7: a7++; break;
+                case 8: a8++; break;
+                case 9: a9++; break;
+            }
+            Number /= 10;
+        }
+        while (Number >= 1);
+
+        System.out.println(" Number " + SavedNumber + ":");
+        PrintNum(0, a0);
+        PrintNum(1, a1);
+        PrintNum(2, a2);
+        PrintNum(3, a3);
+        PrintNum(4, a4);
+        PrintNum(5, a5);
+        PrintNum(6, a6);
+        PrintNum(7, a7);
+        PrintNum(8, a8);
+        PrintNum(9, a9);
+  
