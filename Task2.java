@@ -233,4 +233,5 @@ public class Task2 {
         PrintNum(7, a7);
         PrintNum(8, a8);
         PrintNum(9, a9);
-  
+     }
+} 
