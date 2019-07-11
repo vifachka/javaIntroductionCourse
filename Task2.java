@@ -176,7 +176,7 @@ public class Task2 {
         if (Num > 0)
             System.out.println( " numeral " + Ind + ": " + Num + " times");
     }
-    // 2_2.5_7. Find НОК and НОД as russians say
+    // 2_2.5_7. 
     public static void Task2_2_7(long Number) {
         System.out.print("2.2.7. ");
         if (!IsNatural(Number))
@@ -211,7 +211,7 @@ public class Task2 {
             }
             Number /= 10;
         }
-        while (Number >= 1);
+        while (Number > 0);
 
         System.out.println(" Number " + SavedNumber + ":");
         PrintNum(0, a0);
