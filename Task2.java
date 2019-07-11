@@ -9,6 +9,7 @@ public class Task2 {
         System.out.println("");
         Task2_2_1(-194564370);  // сначала неправильный аргумент
         Task2_2_1(194564370);
+        Task2_2_1(1000);
 
         System.out.println("");
         Task2_2_2(-12345678);   // сначала неправильный аргумент
@@ -59,10 +60,10 @@ public class Task2 {
         Random RandomNum = new Random();
         for (int i = 0; i < quantity; i++) {
             if (RandomNum.nextInt(2) == 0) {
-                ++Heads;
+                Heads++;
                 continue;
             }
-            ++Tails;
+            Tails++;
         }
         System.out.println("Statistics: Heads = " + Heads + ", Tails = " + Tails + " out of " + quantity + ".");
     }
@@ -82,7 +83,7 @@ public class Task2 {
                 MaxNumeral = Numeral;
             Number /= 10;
         }
-        while (Number > 1);
+        while (Number > 0);
         System.out.println("Number " + SavedNumber + ": the max numeral is " + MaxNumeral);
     }
 
@@ -92,7 +93,6 @@ public class Task2 {
         if (!IsNatural(Number))
             return;
 
-        int n = 0;  // количество разрядов в числе Number
         int Numeral      = 0;
         long NewNumber   = 0;
         long SavedNumber = Number;
@@ -106,41 +106,32 @@ public class Task2 {
                 Mess = "";
                 break;
             }
-            n++;
         }
-        while (Number >= 1);
+        while (Number > 0);
         System.out.println("Number " + SavedNumber + " is" + Mess + " a palindrome.");
     }
 
+    // Is the number simple?
+    public static boolean IsSimple(long Number){
+        boolean IsSimple = true;
+        if (Number > 2) {
+            long Half = Number / 2;
+            for (int i = 3; i <= Half; i++) {
+                if ((Number % i) == 0) {
+                    IsSimple = false;
+                    break;
+                }
+            }
+        }
+        return IsSimple;
+    }
     // 2_2.3. Is the number simple
     public static void Task2_2_3(long Number) {
         System.out.print("2.2.3. ");
         if (!IsNatural(Number))
             return;
 
-        String Mess = "";
-        long Half   = Number / 2;
-        if (Number > 2)
-            for(int i = 3; i <= Half; i++){
-                if ((Number % i) == 0){
-                    Mess = " not";
-                    break;
-                }
-            }
-        System.out.println("Number " + Number + " is" + Mess + " simple.");
-    }
-
-    public static boolean IsSimple(long Number){
-        boolean IsSimple = true;
-        long Half = Number / 2;
-        if (Number > 2)
-            for(int i = 3; i <= Half; i++){
-                if ((Number % i) == 0){
-                    IsSimple = false;
-                    break;
-                }
-            }
-        return IsSimple;
+        System.out.println("Number " + Number + " is" + (IsSimple(Number)? "": " not") + " simple.");
     }
 
     // 2_2.4. Find all simple dividers of the number
@@ -233,5 +224,5 @@ public class Task2 {
         PrintNum(7, a7);
         PrintNum(8, a8);
         PrintNum(9, a9);
-     }
-} 
+    }
+}
